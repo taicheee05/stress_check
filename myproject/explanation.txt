@@ -1,0 +1,33 @@
+myproject/
+│
+├── myproject/          # プロジェクトのルートディレクトリ
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py     # 設定ファイル
+│   ├── urls.py         # プロジェクトレベルのURL宣言
+│   └── wsgi.py
+│
+├── myapp/              # アプリケーションディレクトリ
+│   ├── migrations/     # データベースマイグレーションファイル
+│   │   └── __init__.py
+│   ├── templates/      # テンプレートファイル
+│   │   └── myapp/      # アプリケーション固有のテンプレート
+│   │       ├── survey.html
+│   │       └── results.html
+│   ├── __init__.py
+│   ├── admin.py        # 管理サイトの設定
+│   ├── apps.py         # アプリケーションの設定
+│   ├── forms.py        # フォーム定義
+│   ├── models.py       # データモデル
+│   ├── tests.py        # テストケース
+│   └── views.py        # ビュー定義
+│
+├── static/             # 静的ファイル（CSS, JavaScript, 画像など）
+│
+├── media/              # ユーザーがアップロードするメディアファイル
+│
+├── db.sqlite3          # デフォルトのデータベースファイル
+│
+├── manage.py           # Djangoプロジェクト管理用スクリプト
+│
+└── requirements.txt    # 依存ライブラリのリスト
