@@ -22,7 +22,7 @@ class Question(models.Model):
         app_label = 'myapp'
 
 
-class Response(models.Model):
+class StresscheckResponse(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
     response = models.CharField(max_length=100)

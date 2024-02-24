@@ -20,5 +20,5 @@ from myapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.topView.as_view(),name="top")
+    path('',views.TopView.as_view(),name="top")
 ]

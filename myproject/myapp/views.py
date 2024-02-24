@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import StressCheckForm
-from .models import StressCheckResponse
+from .models import StresscheckResponse
 from django.views.generic import TemplateView
 
 class TopView(TemplateView):
@@ -20,7 +20,7 @@ def stress_check_form(request):
 
 def stress_check_results(request, response_id):
     # Retrieve the stress check response using the response_id
-    response = StressCheckResponse.objects.get(id=response_id)
+    response = StresscheckResponse.objects.get(id=response_id)
     # Calculate results or fetch pre-calculated results from the model
     results = response.calculate_results()
     return render(request, 'myapp/stress_check_results.html', {'results': results})

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import User, Question, Response, Calculation
+from .models import User, Question, StresscheckResponse, Calculation
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
@@ -11,8 +11,8 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display = ('text', 'category')
     search_fields = ('text', 'category')
 
-@admin.register(Response)
-class ResponseAdmin(admin.ModelAdmin):
+@admin.register(StresscheckResponse)
+class StresscheckResponseAdmin(admin.ModelAdmin):
     list_display = ('user', 'question', 'response')
     search_fields = ('user__name', 'question__text')
 
