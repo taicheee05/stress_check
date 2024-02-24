@@ -15,8 +15,20 @@ class User(models.Model):
 
 
 class Question(models.Model):
-    text = models.TextField()
-    category = models.CharField(max_length=100)
+    text = models.TextField(verbose_name="質問文")
+    category = models.CharField(max_length=255, verbose_name="カテゴリ")
+    def __str__(self):
+        return self.text
+    class Meta:
+        app_label = 'myapp'
+
+class Choice(models.Model):
+    question = models.ForeignKey(Question, related_name='choices', on_delete=models.CASCADE)
+    text = models.CharField(max_length=255, verbose_name="選択肢")
+    score = models.IntegerField(verbose_name="スコア")
+
+    def __str__(self):
+        return f"{self.text} ({self.score})"
     class Meta:
         app_label = 'myapp'
 
@@ -36,3 +48,5 @@ class Calculation(models.Model):
     # Add other fields as needed based on calculation outcomes
     class Meta:
         app_label = 'myapp'
+
+
