@@ -1,6 +1,10 @@
 from django.shortcuts import render, redirect
 from .forms import StressCheckForm
 from .models import StressCheckResponse
+from django.views.generic import TemplateView
+
+class TopView(TemplateView):
+    template_name="survey.html"
 
 def stress_check_form(request):
     if request.method == 'POST':
